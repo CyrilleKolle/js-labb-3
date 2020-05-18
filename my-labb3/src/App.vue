@@ -6,14 +6,14 @@
       <router-link to="/contact">Contact</router-link>
     </div>
     <router-view />
-
-    <input id="in" type="button" @click="increment(1)" value="Helpful" />
+    <!-- 
+    <input id="in" type="button" @click="increment(1)" value="Yeep" />
 
     <p>{{$store.state.counterI}}</p>
 
-    <input id="de" type="button" @click="increment(1)" value="Not helpful" />
+    <input id="de" type="button" @click="decrement(1)" value="Nope" />-->
 
-    <p>{{$store.state.counterD}}</p>
+    <!-- <p>{{$store.state.counterD}}</p> -->
   </div>
 </template>
 <script>
@@ -32,7 +32,7 @@ export default {
       return this.$store.commit("myMutation", amountToIncrease);
     },
     decrement(amountToDecrease) {
-      this.$store.commit("myMutation", amountToDecrease);
+      return this.$store.commit("myMutation2", amountToDecrease);
     }
   }
 };
@@ -56,6 +56,7 @@ export default {
 }
 
 #nav {
+
   padding: 30px;
 }
 
@@ -66,5 +67,10 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+#new {
+  border: brown;
+  background-color: darkcyan;
+  color: black;
 }
 </style>
