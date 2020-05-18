@@ -1,14 +1,52 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/contact">Contact</router-link>
     </div>
-    <router-view/>
+    <router-view />
+
+    <input id="in" type="button" @click="increment(1)" value="Helpful" />
+
+    <p>{{$store.state.counterI}}</p>
+
+    <input id="de" type="button" @click="increment(1)" value="Not helpful" />
+
+    <p>{{$store.state.counterD}}</p>
   </div>
 </template>
+<script>
+export default {
+  computed: {
+    // name:{
+    //   get(){
+    //     return this.$store.state.name
+    //   },
+    //   set(){}
+    // }
+  },
+  methods: {
+    increment(amountToIncrease) {
+      console.log("increase pressed");
+      return this.$store.commit("myMutation", amountToIncrease);
+    },
+    decrement(amountToDecrease) {
+      this.$store.commit("myMutation", amountToDecrease);
+    }
+  }
+};
+</script>
 
 <style>
+#in {
+  background-color: green;
+  color: black;
+}
+#de {
+  color: black;
+  background-color: red;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

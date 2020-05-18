@@ -9,8 +9,8 @@
         target="_blank"
         rel="noopener"
       >vue-cli documentation</a>.
-    </p> -->
-    <!-- <h3>Installed CLI Plugins</h3> -->
+    </p>
+    <h3>Installed CLI Plugins</h3>-->
     <!-- <ul>
       <li>
         <a
@@ -80,13 +80,13 @@
       <li>
         <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
       </li>
-    </ul> -->
+    </ul>-->
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Heading",
   props: {
     msg: String
   }
