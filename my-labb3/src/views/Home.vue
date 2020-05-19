@@ -1,22 +1,13 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <Heading msg="Welcome to Advice.App" />
+    <img id="logo" src="../assets/adviceImage.png" alt="logo">
+    <Heading id="welcome" msg="Welcome to Advice.App" />
 <input type="button" @click="f" value="new advice" id="new">
-    <p :key="advice.id" v-for="advice in advices">
+    <p :key="advice.id" v-for="advice in advices" id="advice">
      
       {{advice.advice}}
     </p>
-    <!-- <p>
-      <span id="new">Old</span>
-      {{advices}}
-    </p> -->
-
-    <!-- <dl :key="activity.key" v-for="activity in activities">
-      <dt>{{activity.activity}}</dt>
-
-      <dd>{{activity.type}}</dd>
-    </dl>-->
 
     <input id="in" type="button" @click="increment(1)" value="Yeep" />
 
@@ -27,7 +18,11 @@
     <br />
     <p>write your review here</p>
     <input v-model="review" />
-    {{review}}
+
+    <p>{{review}}</p>
+
+  
+    
   </div>
 </template>
 
@@ -77,6 +72,7 @@ export default {
     decrement(amountToDecrease) {
       return this.$store.commit("myMutation2", amountToDecrease);
     }
+ 
   },
   created() {
     fetch("https://api.adviceslip.com/advice")
@@ -84,12 +80,6 @@ export default {
       .then(result => {
         this.advices = result;
       });
-
-    // fetch("https://www.boredapi.com/api/activity/")
-    //   .then(response => response.json())
-    //   .then(result => {
-    //     this.activities = result;
-    //   });
   },
 
   data() {
@@ -98,6 +88,7 @@ export default {
       activities: null,
       advice: null,
       newAdvice: null
+     
     };
   }
 };

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>|
@@ -39,6 +40,7 @@ export default {
 </script>
 
 <style>
+
 #in {
   background-color: green;
   color: black;
@@ -48,6 +50,7 @@ export default {
   background-color: red;
 }
 #app {
+ 
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,7 +59,6 @@ export default {
 }
 
 #nav {
-
   padding: 30px;
 }
 
@@ -69,8 +71,14 @@ export default {
   color: #42b983;
 }
 #new {
-  border: brown;
+  border: 1x solid bold;
   background-color: darkcyan;
   color: black;
+  
 }
+#advice {
+  font-size: 1.5rem;
+
+}
+
 </style>
